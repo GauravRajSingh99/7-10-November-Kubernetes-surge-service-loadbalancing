@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: dhondhu-service
+  namespace: default
+spec: 
+  selector: 
+    name: ghanshyam  #came from labels put on nginx 5 pods
+  type: ClusterIP   #service got ip by this for internal loadbalancing
+  ports: 
+  - port: 6060  #firefox pod se nginx pod ko jab call krenge to firefox ki ip ke sath laga port
+    targetPort: 80  #nginx pods ka port
+
+
